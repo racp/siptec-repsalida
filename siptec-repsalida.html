@@ -1,0 +1,55 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/vaadin-button/vaadin-button.html">
+<link rel="import" href="../../bower_components/vaadin-icons/vaadin-icons.html">
+<link rel="import" href="../../bower_components/vaadin-combo-box/vaadin-combo-box.html">
+<link rel="import" href="../../bower_components/vaadin-dialog/vaadin-dialog.html">
+
+<dom-module id="siptec-repsalida">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <vaadin-dialog-overlay opened>
+      <h3>Salida del Reporte</h3>
+      <vaadin-button id="pant" label="pant" theme="primary">
+        Pantalla
+        <iron-icon icon="vaadin:desktop" slot="prefix"></iron-icon>
+      </vaadin-button>
+      <vaadin-button id="impresora" label="impresora" theme="success">
+        Impresora
+        <iron-icon icon="vaadin:print" slot="prefix"></iron-icon>
+      </vaadin-button>
+      <vaadin-button id="disco" label="disco">
+        Disco
+        <iron-icon icon="vaadin:disc" slot="prefix"></iron-icon>
+      </vaadin-button>
+      <vaadin-combo-box id="cbbSalida" label="Salida a Disco" disabled></vaadin-combo-box>
+    </vaadin-dialog-overlay>
+  </template>
+
+  <script>
+    /**
+     * `siptec-repsalida`
+     * Send to form 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class SiptecRepsalida extends Polymer.Element {
+      static get is() { return 'siptec-repsalida'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'siptec-repsalida'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(SiptecRepsalida.is, SiptecRepsalida);
+  </script>
+</dom-module>
